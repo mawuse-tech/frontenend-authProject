@@ -17,7 +17,7 @@ const Login = () => {
   const loginFunction = async (e) => {
     e.preventDefault(); // prevent page reload
     if (!user.email || !user.password) {
-      setError('Please enter email and password');
+      setError('Please enter and email and password');
       return;
     }
 
