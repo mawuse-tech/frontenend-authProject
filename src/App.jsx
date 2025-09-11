@@ -1,6 +1,5 @@
 
 import React from 'react'
-import RootLayout from '../layout/rootLayout';
 import Login from '../Auth/Login';
 import Signup from '../Auth/Signup';
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
@@ -9,6 +8,7 @@ import { useContext } from 'react';
 import { AuthContext } from './contex/AuthContex';
 import ResetPassword from '../pages/ResetPassword';
 import ForgotPassword from '../pages/ForgotPassword';
+import RootLayout from '../layout/RootLayout';
 
 function PrivateRoute({ children }) {
   const { currentUser, loading } = useContext(AuthContext);
@@ -56,18 +56,18 @@ const router = createBrowserRouter([
             <Home />
           </PrivateRoute>
         )
-      },      
+      },
     ],
   },
 
   {
     path: '/resetPassword/:token',
-    element:  <ResetPassword />
+    element: <ResetPassword />
   },
 
   {
     path: '/forgotPassword',
-    element:  <ForgotPassword />
+    element: <ForgotPassword />
   }
 ]);
 
